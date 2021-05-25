@@ -1,6 +1,6 @@
 
 module.exports = {
     configs: {
-        recommended: require('./config/recommended')
+        recommended: require('./configs/recommended')
     }
 };
