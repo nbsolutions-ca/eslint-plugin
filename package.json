@@ -1,0 +1,36 @@
+{
+  "name": "@nbsolutions/eslint-plugin",
+  "version": "1.0.0",
+  "description": "Common Lint config for NBSolutions packages",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublishOnly": "npm run-script build",
+    "changelog": "auto-changelog --output CHANGELOG.md -p --release-summary --ignore-commit-pattern chore --issue-pattern '[A-Z]+-\\d+' --issue-url https://totalpave.atlassian.net/browse/{id}",
+    "preversion": "npm run build",
+    "version": "npm run changelog && git add CHANGELOG.md && git commit -m 'chore: changelog'",
+    "postversion": "git push && git push --tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nbsolutions-ca/eslint-plugin.git"
+  },
+  "files": [
+    "dist",
+    "package.json",
+    "README.md"
+  ],
+  "author": "norman@nbsolutions.ca",
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/nbsolutions-ca/eslint-plugin#readme",
+  "peerDependencies": {
+    "eslint": ">=7.5.0 && <8.0.0",
+    "@typescript-eslint/eslint-plugin": "4.x",
+    "@typescript-eslint/parser": "4.x"
+  },
+  "devDependencies": {
+    "auto-changelog": "2.3.0",
+    "eslint": "7.27.0"
+  }
+}
