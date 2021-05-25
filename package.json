@@ -4,12 +4,10 @@
   "description": "Common Lint config for NBSolutions packages",
   "main": "index.js",
   "scripts": {
-    "build": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "prepublishOnly": "npm run-script build",
-    "changelog": "auto-changelog --output CHANGELOG.md -p --release-summary --ignore-commit-pattern chore --issue-pattern '[A-Z]+-\\d+' --issue-url https://totalpave.atlassian.net/browse/{id}",
-    "preversion": "npm run build",
-    "version": "npm run changelog && git add CHANGELOG.md && git commit -m 'chore: changelog'",
+    "changelog": "auto-changelog --output CHANGELOG.md -p --release-summary --ignore-commit-pattern chore",
+    "test": "exit 0",
+    "preversion": "npm test",
+    "version": "NODE_ENV=production npm run changelog && git add CHANGELOG.md && git commit -m 'chore: changelog'",
     "postversion": "git push && git push --tags"
   },
   "repository": {
