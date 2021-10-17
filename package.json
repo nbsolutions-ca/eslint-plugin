@@ -24,12 +24,12 @@
   "license": "Apache-2.0",
   "homepage": "https://github.com/nbsolutions-ca/eslint-plugin#readme",
   "peerDependencies": {
-    "eslint": ">=7.5.0 && <8.0.0",
-    "@typescript-eslint/eslint-plugin": "4.x",
-    "@typescript-eslint/parser": "4.x"
+    "eslint": ">=8 && <9.0.0",
+    "@typescript-eslint/eslint-plugin": "5.x",
+    "@typescript-eslint/parser": "5.x"
   },
   "devDependencies": {
     "auto-changelog": "2.3.0",
-    "eslint": "7.27.0"
+    "eslint": "8.0.1"
   }
 }
